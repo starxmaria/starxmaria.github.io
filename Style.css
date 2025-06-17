@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  text-align: center;
+  padding: 30px;
+}
+
+.placar-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.set-info {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.nomes-times {
+  margin-bottom: 20px;
+}
+
+.nomes-times div {
+  margin: 5px 0;
+}
+
+.nomes-times label {
+  font-size: 16px;
+}
+
+.nomes-times input {
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.times {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.time {
+  background: #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  width: 40%;
+}
+
+.final {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pontos {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+.botoes button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.botoes button:hover {
+  background: #45a049;
+}
+
+.controles {
+  margin-top: 30px;
+}
+
+.controles button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background: #2196F3;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.controles button:hover {
+  background: #0b7dda;
+}

@@ -1,0 +1,96 @@
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Placar de Vôlei</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="placar-container">
+    <h1>Placar de Vôlei</h1>
+    <div class="set-info">
+      <p>Set Atual: <span id="setAtual">1</span></p>
+    </div>
+
+    <div class="nomes-times">
+      <div>
+        <label for="nomeTimeA">Nome do Time A:</label>
+        <input type="text" id="nomeTimeA" placeholder="Digite o nome do Time A" oninput="atualizarNomes()">
+      </div>
+      <div>
+        <label for="nomeTimeB">Nome do Time B:</label>
+        <input type="text" id="nomeTimeB" placeholder="Digite o nome do Time B" oninput="atualizarNomes()">
+      </div>
+    </div>
+
+    <div class="times">
+      <div class="time" id="timeA">
+        <h2 id="nomeTimeATitulo">Time A</h2>
+        <div class="pontos" id="pontosA">0</div>
+        <div class="botoes">
+          <button onclick="alterarPonto('A', 1)">+1 Ponto</button>
+          <button onclick="alterarPonto('A', -1)">-1 Ponto</button>
+        </div>
+      </div>
+
+      <div class="final">VS</div>
+
+      <div class="time" id="timeB">
+        <h2 id="nomeTimeBTitulo">Time B</h2>
+        <div class="pontos" id="pontosB">0</div>
+        <div class="botoes">
+          <button onclick="alterarPonto('B', 1)">+1 Ponto</button>
+          <button onclick="alterarPonto('B', -1)">-1 Ponto</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controles">
+      <button onclick="reiniciar()">Reiniciar Jogo</button>
+      <button onclick="proximoSet()">Próximo Set</button>
+    </div>
+  </div>
+
+  <script>
+    let pontosA = 0;
+    let pontosB = 0;
+    let setAtual = 1;
+
+    function atualizarPlacar() {
+      document.getElementById('pontosA').innerText = pontosA;
+      document.getElementById('pontosB').innerText = pontosB;
+      document.getElementById('setAtual').innerText = setAtual;
+    }
+
+    function atualizarNomes() {
+      const nomeA = document.getElementById('nomeTimeA').value || 'Time A';
+      const nomeB = document.getElementById('nomeTimeB').value || 'Time B';
+      document.getElementById('nomeTimeATitulo').innerText = nomeA;
+      document.getElementById('nomeTimeBTitulo').innerText = nomeB;
+    }
+
+    function alterarPonto(time, valor) {
+      if (time === 'A') {
+        pontosA = Math.max(0, pontosA + valor);
+      } else {
+        pontosB = Math.max(0, pontosB + valor);
+      }
+      atualizarPlacar();
+    }
+
+    function reiniciar() {
+      pontosA = 0;
+      pontosB = 0;
+      setAtual = 1;
+      atualizarPlacar();
+    }
+
+    function proximoSet() {
+      pontosA = 0;
+      pontosB = 0;
+      setAtual++;
+      atualizarPlacar();
+    }
+  </script>
+</body>
+</html>
